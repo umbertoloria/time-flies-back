@@ -3,9 +3,12 @@ import { AppModule } from './app.module';
 import * as session from 'express-session';
 import * as passport from 'passport';
 
-// TODO: Use env variables
 export const getAppEndpoint = (): string => {
-  return process.env.FRONTEND_ENDPOINT || 'http://localhost:3000';
+  const frontEndEndpoint = process.env.FRONTEND_ENDPOINT;
+  if (!frontEndEndpoint) {
+    throw new Error('Invalid App Endpoint');
+  }
+  return frontEndEndpoint;
 };
 
 async function bootstrap() {

@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Request, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { AppService } from './app.service';
 import { LocalAuthGuard } from './auth/local-auth.guard';
 import { getAppEndpoint } from './main';
@@ -14,21 +15,24 @@ export class AppController {
 
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')
-  async login(@Res() res: any) {
+  async login(@Res() res: Response) {
     const successRedirect = getAppEndpoint();
     return res.redirect(successRedirect);
   }
 
   // @UseGuards(LocalAuthGuard)
-  @Post('auth/status')
-  async status(@Request() req: any) {
-    // TODO: Use this data, after proper typing
-    console.log(req.user);
-
+  @Get('auth/status')
+  async status(@Req() req: Request) {
+    const { user } = req;
+    if (!user) {
+      return JSON.stringify({
+        user: undefined,
+      });
+    }
     return JSON.stringify({
       user: {
-        id: 3,
-        email: 'ciao',
+        id: user.userId,
+        email: user.email,
       },
     });
   }
