@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { TCalendar } from '../legacy/src/sdk/types';
-import {
-  calendar1,
-  calendar2,
-  calendar3,
-} from './data';
+import { TCalendar } from '../sdk/types';
+import { calendar1, calendar2, calendar3 } from './data';
 
 @Injectable()
 export class CalendarService {

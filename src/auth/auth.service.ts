@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TAuthStatus } from '../legacy/src/sdk/types';
+import { TAuthStatus } from '../sdk/types';
 
 @Injectable()
 export class AuthService {

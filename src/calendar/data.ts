@@ -1,4 +1,4 @@
-import { TCalendar } from '../legacy/src/sdk/types';
+import { TCalendar } from '../sdk/types';
 
 export const calendar1: TCalendar = {
   name: 'Example 1',
