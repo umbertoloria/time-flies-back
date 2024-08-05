@@ -1,7 +1,8 @@
 import { Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
 import { LocalAuthGuard } from './local-auth.guard';
 import { Request, Response } from 'express';
-import { getAppEndpoint } from '../main';
+import { AuthService } from '../legacy/src/services/auth/AuthService';
+import { getAppEndpoint } from '../legacy/src/endpoints';
 
 @Controller('auth')
 export class AuthController {
@@ -13,19 +14,27 @@ export class AuthController {
   }
 
   @UseGuards(LocalAuthGuard)
-  @Get('status')
-  async status(@Req() req: Request) {
-    const { user } = req;
-    if (!user) {
-      return JSON.stringify({
-        user: undefined,
-      });
-    }
-    return JSON.stringify({
-      user: {
-        id: user.id,
-        email: user.email,
-      },
+  @Get('logout')
+  async logout(@Req() req: Request, @Res() res: Response) {
+    req.logout((err) => {
+      if (err) {
+        // FIXME
+        throw err;
+      }
+      return res.redirect(getAppEndpoint());
     });
+  }
+
+  // @UseGuards(LocalAuthGuard)
+  @Get('status')
+  async status(@Req() req: Request, @Res() res: Response) {
+    const expressUser = req.user;
+
+    const result = AuthService.getStatus(expressUser);
+    if (result === 'unauthorized') {
+      // Or use "req.isAuthenticated()" or "!req.user"?
+      return res.sendStatus(401);
+    }
+    return res.send(result);
   }
 }

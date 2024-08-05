@@ -2,14 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as session from 'express-session';
 import * as passport from 'passport';
-
-export const getAppEndpoint = (): string => {
-  const frontEndEndpoint = process.env.FRONTEND_ENDPOINT;
-  if (!frontEndEndpoint) {
-    throw new Error('Invalid App Endpoint');
-  }
-  return frontEndEndpoint;
-};
+import { getAppEndpoint } from './legacy/src/endpoints';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
