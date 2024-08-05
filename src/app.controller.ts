@@ -1,6 +1,7 @@
-import { Controller, Request, Get, Post, UseGuards } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Controller, Get, Post, Request, Res, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
+import { LocalAuthGuard } from './auth/local-auth.guard';
+import { getAppEndpoint } from './main';
 
 @Controller()
 export class AppController {
@@ -11,9 +12,24 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @UseGuards(AuthGuard('local'))
+  @UseGuards(LocalAuthGuard)
   @Post('auth/login')
-  async login(@Request() req: any) {
-    return req.user;
+  async login(@Res() res: any) {
+    const successRedirect = getAppEndpoint();
+    return res.redirect(successRedirect);
+  }
+
+  // @UseGuards(LocalAuthGuard)
+  @Post('auth/status')
+  async status(@Request() req: any) {
+    // TODO: Use this data, after proper typing
+    console.log(req.user);
+
+    return JSON.stringify({
+      user: {
+        id: 3,
+        email: 'ciao',
+      },
+    });
   }
 }
