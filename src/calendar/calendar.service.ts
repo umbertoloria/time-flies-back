@@ -4,7 +4,7 @@ import {
   calendar1,
   calendar2,
   calendar3,
-} from '../legacy/src/services/calendar/data';
+} from './data';
 
 @Injectable()
 export class CalendarService {
