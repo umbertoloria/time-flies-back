@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
-// This should be a real class/interface representing a user entity
 export type INUser = {
-  userId: number;
+  id: number;
+  email: string;
   username: string;
 };
 type DBUser = INUser & {
@@ -13,17 +13,8 @@ type DBUser = INUser & {
 export class UsersService {
   private readonly users: DBUser[] = [
     {
-      userId: 1,
-      username: 'john',
-      password: 'changeme',
-    },
-    {
-      userId: 2,
-      username: 'maria',
-      password: 'guess',
-    },
-    {
-      userId: 3,
+      id: 1,
+      email: 'test@test.test',
       username: 'test@test.test',
       password: 'test',
     },
@@ -35,7 +26,8 @@ export class UsersService {
 
   cleanINUser(user: DBUser): INUser {
     return {
-      userId: user.userId,
+      id: user.id,
+      email: user.email,
       username: user.username,
     };
   }

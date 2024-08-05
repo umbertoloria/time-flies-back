@@ -31,7 +31,7 @@ export class AppController {
     }
     return JSON.stringify({
       user: {
-        id: user.userId,
+        id: user.id,
         email: user.email,
       },
     });
