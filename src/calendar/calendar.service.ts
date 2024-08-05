@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TCalendar } from '../sdk/types';
-import { calendar1, calendar2, calendar3 } from './data';
+import { calendar1, calendar2, calendar3, calendar4 } from "./data";
 
 @Injectable()
 export class CalendarService {
@@ -19,6 +19,8 @@ export class CalendarService {
       calendar = calendar2;
     } else if (calendarId === 3) {
       calendar = calendar3;
+    } else if (calendarId === 4) {
+      calendar = calendar4;
     }
     return calendar;
   }
