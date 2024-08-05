@@ -1,9 +1,11 @@
 import { Controller, Get, Param, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { CalendarService } from '../legacy/src/services/calendar/CalendarService';
+import { CalendarService } from './calendar.service';
 
 @Controller('calendar')
 export class CalendarController {
+  constructor(private calendarService: CalendarService) {}
+
   @Get(':id')
   async status(
     @Req() req: Request,
@@ -28,7 +30,7 @@ export class CalendarController {
     const calendarId = parseInt(params?.id, 10);
 
     // Service call
-    const calendar = CalendarService.readCalendar(expressUser, calendarId);
+    const calendar = this.calendarService.readCalendar(expressUser, calendarId);
     if (calendar === 'forbidden') {
       return res.sendStatus(403);
     }

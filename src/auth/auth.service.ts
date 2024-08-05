@@ -1,6 +1,8 @@
-import { TAuthStatus } from '../../sdk/types';
+import { Injectable } from '@nestjs/common';
+import { TAuthStatus } from '../legacy/src/sdk/types';
 
-export const AuthService = {
+@Injectable()
+export class AuthService {
   getStatus(
     user: Express.Request['user'] | undefined,
   ): 'unauthorized' | TAuthStatus {
@@ -13,5 +15,5 @@ export const AuthService = {
         email: user.email,
       },
     };
-  },
-};
+  }
+}

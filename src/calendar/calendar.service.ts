@@ -1,7 +1,13 @@
-import { TCalendar } from '../../sdk/types';
-import { calendar1, calendar2, calendar3 } from './data';
+import { Injectable } from '@nestjs/common';
+import { TCalendar } from '../legacy/src/sdk/types';
+import {
+  calendar1,
+  calendar2,
+  calendar3,
+} from '../legacy/src/services/calendar/data';
 
-export const CalendarService = {
+@Injectable()
+export class CalendarService {
   readCalendar(
     user: Express.User | undefined,
     calendarId: number,
@@ -19,5 +25,5 @@ export const CalendarService = {
       calendar = calendar3;
     }
     return calendar;
-  },
-};
+  }
+}
