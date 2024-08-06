@@ -1,14 +1,15 @@
 // Types
-// 2023-08-26T16:28:34Z
-// v1.1
+// 2024-08-06T09:13:00Z
+// v2.0
 
 // Calendar
 export type TCalendar = {
   name: string;
   color: string;
-  datesInfo: TDateInfo[];
+  days: TDay[];
+  plannedDays?: TDay[];
 };
-export type TDateInfo = {
+export type TDay = {
   date: string; // Es. "2023-01-01"
   intensity?: number;
 };

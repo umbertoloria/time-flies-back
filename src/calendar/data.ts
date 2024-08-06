@@ -3,7 +3,7 @@ import { TCalendar } from '../sdk/types';
 export const calendar1: TCalendar = {
   name: 'Example 1',
   color: '#9f4',
-  datesInfo: [
+  days: [
     // 2023-02
     {
       date: '2023-02-01',
@@ -561,12 +561,41 @@ export const calendar1: TCalendar = {
       date: '2024-08-05',
     },
   ],
+  plannedDays: [
+    {
+      date: '2024-08-07',
+    },
+    {
+      date: '2024-08-09',
+    },
+    {
+      date: '2024-08-11',
+    },
+    {
+      date: '2024-08-19',
+    },
+    {
+      date: '2024-08-21',
+    },
+    {
+      date: '2024-08-23',
+    },
+    {
+      date: '2024-08-26',
+    },
+    {
+      date: '2024-08-28',
+    },
+    {
+      date: '2024-08-30',
+    },
+  ],
 };
 
 export const calendar2: TCalendar = {
   name: 'Workout',
   color: '#9bd',
-  datesInfo: [
+  days: [
     // 2023-01
     {
       date: '2023-01-01',
@@ -679,12 +708,32 @@ export const calendar2: TCalendar = {
       date: '2024-07-26',
     },
   ],
+  plannedDays: [
+    {
+      date: '2024-08-06',
+    },
+    {
+      date: '2024-08-07',
+    },
+    {
+      date: '2024-08-08',
+    },
+    {
+      date: '2024-08-09',
+    },
+    {
+      date: '2024-08-10',
+    },
+    {
+      date: '2024-08-11',
+    },
+  ],
 };
 
 export const calendar3: TCalendar = {
   name: 'Batteria',
   color: '#f91',
-  datesInfo: [
+  days: [
     // 2023-06
     {
       date: '2023-06-03',
@@ -1045,12 +1094,32 @@ export const calendar3: TCalendar = {
       date: '2024-08-01', // L
     },
   ],
+  plannedDays: [
+    {
+      date: '2024-08-06',
+    },
+    {
+      date: '2024-08-07',
+    },
+    {
+      date: '2024-08-08',
+    },
+    {
+      date: '2024-08-09',
+    },
+    {
+      date: '2024-08-10',
+    },
+    {
+      date: '2024-08-11',
+    },
+  ],
 };
 
 export const calendar4: TCalendar = {
   name: 'Piscina',
   color: '#7df',
-  datesInfo: [
+  days: [
     // 2023-11
     {
       date: '2023-11-02',
@@ -1119,10 +1188,30 @@ export const calendar4: TCalendar = {
 export const calendar5: TCalendar = {
   name: 'Tastiera',
   color: '#0bf',
-  datesInfo: [
+  days: [
     // 2024-08
     {
       date: '2024-08-04',
+    },
+  ],
+  plannedDays: [
+    {
+      date: '2024-08-06',
+    },
+    {
+      date: '2024-08-07',
+    },
+    {
+      date: '2024-08-08',
+    },
+    {
+      date: '2024-08-09',
+    },
+    {
+      date: '2024-08-10',
+    },
+    {
+      date: '2024-08-11',
     },
   ],
 };
