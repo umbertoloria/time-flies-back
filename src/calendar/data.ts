@@ -557,12 +557,15 @@ export const calendar1: TCalendar = {
     {
       date: '2024-08-03',
     },
+    {
+      date: '2024-08-05',
+    },
   ],
 };
 
 export const calendar2: TCalendar = {
-  name: 'Example 2',
-  color: '#cf2',
+  name: 'Workout',
+  color: '#9bd',
   datesInfo: [
     // 2023-01
     {
@@ -679,8 +682,8 @@ export const calendar2: TCalendar = {
 };
 
 export const calendar3: TCalendar = {
-  name: 'Example 3',
-  color: '#f19',
+  name: 'Batteria',
+  color: '#f91',
   datesInfo: [
     // 2023-06
     {
@@ -1045,8 +1048,8 @@ export const calendar3: TCalendar = {
 };
 
 export const calendar4: TCalendar = {
-  name: 'Example 4',
-  color: '#2cf',
+  name: 'Piscina',
+  color: '#7df',
   datesInfo: [
     // 2023-11
     {
@@ -1109,6 +1112,17 @@ export const calendar4: TCalendar = {
     // 2024-04
     {
       date: '2024-04-23',
+    },
+  ],
+};
+
+export const calendar5: TCalendar = {
+  name: 'Tastiera',
+  color: '#0bf',
+  datesInfo: [
+    // 2024-08
+    {
+      date: '2024-08-04',
     },
   ],
 };
