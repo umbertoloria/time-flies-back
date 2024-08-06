@@ -3,6 +3,7 @@ import { TCalendar } from '../sdk/types';
 export const calendar1: TCalendar = {
   name: 'Example 1',
   color: '#9f4',
+  plannedColor: '#ceffa5',
   days: [
     // 2023-02
     {
@@ -595,6 +596,7 @@ export const calendar1: TCalendar = {
 export const calendar2: TCalendar = {
   name: 'Workout',
   color: '#9bd',
+  plannedColor: '#bfccda',
   days: [
     // 2023-01
     {
@@ -733,6 +735,7 @@ export const calendar2: TCalendar = {
 export const calendar3: TCalendar = {
   name: 'Batteria',
   color: '#f91',
+  plannedColor: '#ffcb86',
   days: [
     // 2023-06
     {
@@ -1119,6 +1122,7 @@ export const calendar3: TCalendar = {
 export const calendar4: TCalendar = {
   name: 'Piscina',
   color: '#7df',
+  plannedColor: '#c8f0ff',
   days: [
     // 2023-11
     {
@@ -1188,6 +1192,7 @@ export const calendar4: TCalendar = {
 export const calendar5: TCalendar = {
   name: 'Tastiera',
   color: '#0bf',
+  plannedColor: '#b8eaff',
   days: [
     // 2024-08
     {

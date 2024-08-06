@@ -1,11 +1,12 @@
 // Types
-// 2024-08-06T09:13:00Z
-// v2.0
+// 2024-08-06T09:41:56Z
+// v2.1
 
 // Calendar
 export type TCalendar = {
   name: string;
   color: string;
+  plannedColor: string;
   days: TDay[];
   plannedDays?: TDay[];
 };
