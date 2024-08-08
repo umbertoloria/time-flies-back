@@ -1,6 +1,7 @@
 import { TCalendar } from '../sdk/types';
 
-export const calendar1: TCalendar = {
+const calendar1: TCalendar = {
+  id: 1,
   name: 'Example 1',
   color: '#9f4',
   plannedColor: '#ceffa5',
@@ -564,13 +565,10 @@ export const calendar1: TCalendar = {
   ],
   plannedDays: [
     {
-      date: '2024-08-07',
+      date: '2024-08-08',
     },
     {
-      date: '2024-08-09',
-    },
-    {
-      date: '2024-08-11',
+      date: '2024-08-10',
     },
     {
       date: '2024-08-19',
@@ -593,7 +591,8 @@ export const calendar1: TCalendar = {
   ],
 };
 
-export const calendar2: TCalendar = {
+const calendar2: TCalendar = {
+  id: 2,
   name: 'Workout',
   color: '#9bd',
   plannedColor: '#bfccda',
@@ -709,14 +708,15 @@ export const calendar2: TCalendar = {
     {
       date: '2024-07-26',
     },
-  ],
-  plannedDays: [
+    // 2024-08
     {
       date: '2024-08-06',
     },
     {
       date: '2024-08-07',
     },
+  ],
+  plannedDays: [
     {
       date: '2024-08-08',
     },
@@ -732,7 +732,8 @@ export const calendar2: TCalendar = {
   ],
 };
 
-export const calendar3: TCalendar = {
+const calendar3: TCalendar = {
+  id: 3,
   name: 'Batteria',
   color: '#f91',
   plannedColor: '#ffcb86',
@@ -1099,27 +1100,28 @@ export const calendar3: TCalendar = {
   ],
   plannedDays: [
     {
-      date: '2024-08-06',
+      date: '2024-08-19',
     },
     {
-      date: '2024-08-07',
+      date: '2024-08-20',
     },
     {
-      date: '2024-08-08',
+      date: '2024-08-21',
     },
     {
-      date: '2024-08-09',
+      date: '2024-08-22',
     },
     {
-      date: '2024-08-10',
+      date: '2024-08-23',
     },
     {
-      date: '2024-08-11',
+      date: '2024-08-24',
     },
   ],
 };
 
-export const calendar4: TCalendar = {
+const calendar4: TCalendar = {
+  id: 4,
   name: 'Piscina',
   color: '#7df',
   plannedColor: '#c8f0ff',
@@ -1189,7 +1191,8 @@ export const calendar4: TCalendar = {
   ],
 };
 
-export const calendar5: TCalendar = {
+const calendar5: TCalendar = {
+  id: 5,
   name: 'Tastiera',
   color: '#0bf',
   plannedColor: '#b8eaff',
@@ -1201,22 +1204,30 @@ export const calendar5: TCalendar = {
   ],
   plannedDays: [
     {
-      date: '2024-08-06',
+      date: '2024-08-19',
     },
     {
-      date: '2024-08-07',
+      date: '2024-08-20',
     },
     {
-      date: '2024-08-08',
+      date: '2024-08-21',
     },
     {
-      date: '2024-08-09',
+      date: '2024-08-22',
     },
     {
-      date: '2024-08-10',
+      date: '2024-08-23',
     },
     {
-      date: '2024-08-11',
+      date: '2024-08-24',
     },
   ],
 };
+
+export const calendars = [
+  calendar1,
+  calendar2,
+  calendar3,
+  calendar4,
+  calendar5,
+];
